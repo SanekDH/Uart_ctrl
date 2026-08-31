@@ -1,18 +1,26 @@
 module Segment (
   input logic Clk,
-  input reg [7:0] DataIn,
-  output reg [7:0] Enable,
-  output reg [7:0] SegData = 8'b00000000
+  input logic [7:0] DataIn,
+  output logic [7:0] Enable,
+  output logic [7:0] SegData,
+  input logic Rst
 );
   reg [2:0] swap;
-  reg [7:0] count = {8{1'b0}};
-  reg [7:0] DataBuf = 8'b00000000;
+  reg [7:0] count;
+  reg [7:0] DataBuf;
 
   assign DataBuf = DataIn;
 
   always_ff @(posedge Clk) begin : stage1
+    if (Rst) begin
+      count <= 8'd0;
+      swap  <= 3'd0;
+      Enable <= 8'b11111111;
+      SegData <= 8'b00000011;
+    end
+    else begin
     count <= count + 8'd1;
-    if (count == 8'd0) begin
+    if (count == 8'd255) begin
       swap <= swap + 3'd1;
     end
 
@@ -90,5 +98,6 @@ module Segment (
         end
       end
     endcase
+    end
   end
 endmodule

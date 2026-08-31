@@ -21,7 +21,9 @@ module testbench();
     .TxDataIn(tx_data_in),
     .NewData(new_data), // запрос на обработку нового байта
     .TxOut(txd),
-    .ReadyForData()
+    .ReadyForData(),
+    .seg_data(),
+    .enable() 
   );
 
   initial begin
@@ -34,7 +36,7 @@ module testbench();
     Rst <= 1'b0;
     repeat(10) @(posedge Clk);
     new_data <= 1'b1;
-    tx_data_in <= 8'b11111111;
+    tx_data_in <= 8'b10101010;
     repeat(1) @(posedge Clk);
     new_data <= 1'b0;
     #10000;

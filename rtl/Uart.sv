@@ -52,6 +52,7 @@ module Uart
     .Clk(Clk),
     .DataIn(DataOut),
     .Enable(enable),
-    .SegData(seg_data)
+    .SegData(seg_data),
+    .Rst(Rst)
   );
 endmodule
