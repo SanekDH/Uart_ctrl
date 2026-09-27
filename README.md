@@ -1,5 +1,5 @@
 # Описание
-Контроллер UART (Universal Asynchronous Receiver-Transmitter), написанный на SystemVerilog. Проект настроен и аппаратно протестирован на ПЛИС Altera/Intel Cyclone IV (EP4CE6E22C8).
+Контроллер UART, написанный на SystemVerilog. Проект настроен и аппаратно протестирован на ПЛИС Altera/Intel Cyclone IV (EP4CE6E22C8). Отладочная плата: A-C4E6E10
 
 ## Характеристики
 * **Язык:** SystemVerilog
