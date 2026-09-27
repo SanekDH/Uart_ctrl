@@ -1,0 +1,29 @@
+# Специфичные папки Quartus
+quartus/db/
+quartus/incremental_db/
+quartus/output_files/
+quartus/simulation/
+quartus/greybox_tmp/
+quartus/hc_output/
+*.qws
+
+# Отчеты и логи Quartus
+*.rpt
+*.smsg
+*.summary
+*.done
+*.jdi
+*.pin
+*.sld
+*.qws
+
+# Временные файлы Modelsim
+sim/work/
+sim/transcript
+sim/*.wlf
+sim/*.vstf
+
+# Бинарники (прошивки лучше прикреплять в GitHub Releases, а не хранить в коде)
+*.sof
+*.pof
+*.jic
